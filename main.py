@@ -14,6 +14,13 @@ BOT_TOKEN = getenv('BOT_TOKEN', False
 """
 
 
+client = webserver.AppRunner(await bot_run())
+        await client.setup()
+        bind_address = "0.0.0.0"
+        await webserver.TCPSite(client, bind_address,
+        PORT_CODE).start()
+
+
 ANSHIF = Client(
     name="Anshif81_Bot",
     api_id =API_ID,
