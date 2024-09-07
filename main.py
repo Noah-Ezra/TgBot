@@ -24,7 +24,9 @@ ANSHIF = Client(
 
 @ANSHIF.on_message(filters.command("start"))
 async def start_cmd(client, message):
-    ANSHIF.send_message(message.chat_id, 'test')
+    #ANSHIF.send_message(message.chat_id, 'test')
+    print(message)
+    print(client)
 
 @ANSHIF.on_message(filters.command("help"))
 async def help_cmd(client, message):
