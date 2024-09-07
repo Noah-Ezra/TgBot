@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from os import getenv
-from aiohttp import web as webserver
+
 
 API_ID = "24992766"
 API_HASH = "f7f3c0918f653963d8e58c5d6ad54316"
@@ -20,14 +20,6 @@ ANSHIF = Client(
     api_hash=API_HASH,
     bot_token=BOT_TOKEN
 )
-
-
-client = webserver.AppRunner(await bot_run())
-        await client.setup()
-        bind_address = "0.0.0.0"
-        await webserver.TCPSite(client, bind_address,
-        PORT_CODE).start()
-
 
 
 @ANSHIF.on_message(filters.command("start"))
