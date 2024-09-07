@@ -2,6 +2,7 @@ from pyrogram import Client, filters
 from os import getenv
 
 
+
 API_ID = "24992766"
 API_HASH = "f7f3c0918f653963d8e58c5d6ad54316"
 BOT_TOKEN = "6471542930:AAE_fwmRJ0a5uElJxrBoBNoyQ7m5C8eNMjY"
@@ -22,18 +23,20 @@ ANSHIF = Client(
 )
 
 
+
 @ANSHIF.on_message(filters.command("start"))
 async def start_cmd(client, message):
-    await ANSHIF.send_message(message.chat.id, 'test')
+    await ANSHIF.send_message(message.chat.id, "Yes, let's satrt")
+
 
 
 @ANSHIF.on_message(filters.command("help"))
 async def help_cmd(client, message):
-       print("Helps command")
+    await ANSHIF.send_message(message.chat.id, "How can i help you")
 
 
 
-print("Bot started")
+print("Bot started✅✅✅")
 
 
 if __name__ == '__main__':
