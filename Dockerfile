@@ -1,10 +1,6 @@
-FROM python:3.10-slim-buster
-
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
-
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
+FROM python:3.9-slim
 WORKDIR /app
 COPY . /app
-CMD ["python", "bot.py"]
+EXPOSE 8080
+RUN pip install --no-cache-dir -r requirements.txt
+CMD ["python", "main.py"]
